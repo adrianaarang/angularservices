@@ -1,18 +1,22 @@
 import { NgModule, provideBrowserGlobalErrorListeners } from '@angular/core';
-import { provideHttpClient } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
+import { AppRoutingModule } from './app-routing-module';
 import { App } from './app';
-import { ComicsComponent } from './components/comics-component/comics-component';
 import { ServiceComics } from './services/service.comics';
-import { ComicComponentAsync } from './components/comic-component-async/comic-component-async';
+import { ComicsComponent } from './components/comics-component/comics-component';
+import { provideHttpClient } from '@angular/common/http';
+import { ServicePersonas } from './services/service.personas';
+import { PersonasApiComponent } from './components/personas-api-component/personas-api-component';
+import { MenuComponent } from './components/menu-component/menu-component';
 
 @NgModule({
-  declarations: [App, ComicsComponent, ComicComponentAsync],
-  imports: [BrowserModule],
+  declarations: [App, ComicsComponent, PersonasApiComponent, MenuComponent],
+  imports: [BrowserModule, AppRoutingModule],
   providers: [
+    provideHttpClient(),
     provideBrowserGlobalErrorListeners(),
     ServiceComics,
-    provideHttpClient(),
+    ServicePersonas,
   ],
   bootstrap: [App],
 })

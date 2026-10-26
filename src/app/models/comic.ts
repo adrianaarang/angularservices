@@ -1,7 +1,7 @@
 export class Comic {
-  constructor(
-    public nombre: string,
-    public imagen: string,
-    public descripcion: string
-  ) {}
+    constructor(
+        public titulo: string, 
+        public imagen: string, 
+        public descripcion: string
+    ) {}
 }

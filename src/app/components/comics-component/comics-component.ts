@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { ServiceComics } from '../../services/service.comics';
 import { Comic } from '../../models/comic';
 
@@ -9,21 +9,12 @@ import { Comic } from '../../models/comic';
   templateUrl: './comics-component.html',
 })
 export class ComicsComponent implements OnInit {
+  public arrayComics!: Array<Comic>;
+  constructor(private _cdr: ChangeDetectorRef
+    , private _service: ServiceComics){}
 
-  public comics : Comic[];
-
-  constructor(
-    private _cdr : ChangeDetectorRef,
-    private _service : ServiceComics
-  ) {
-    this.comics = [];
-  }
-
-  ngOnInit(): void {
-    this._service.getComics().then(cs => {
-      this.comics = cs;
-      this._cdr.detectChanges();
-    });
+  async ngOnInit(): Promise<void> {
+    this.arrayComics = await this._service.getComicsAsync();
+    this._cdr.detectChanges();
   }
 }
- 
