@@ -1,0 +1,6 @@
+<h1>Service Comics JSON</h1>
+<div *ngFor="let comic of comics">
+  <h3>{{ comic.nombre }}</h3>
+  <img [src]="comic.imagen" [alt]="comic.nombre">
+  <p>{{ comic.descripcion }}</p>
+</div>
