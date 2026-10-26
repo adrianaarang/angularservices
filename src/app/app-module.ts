@@ -1,4 +1,5 @@
 import { NgModule, provideBrowserGlobalErrorListeners } from '@angular/core';
+import { provideHttpClient } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { App } from './app';
 import { ComicsComponent } from './components/comics-component/comics-component';
@@ -8,7 +9,11 @@ import { ComicComponentAsync } from './components/comic-component-async/comic-co
 @NgModule({
   declarations: [App, ComicsComponent, ComicComponentAsync],
   imports: [BrowserModule],
-  providers: [provideBrowserGlobalErrorListeners(), ServiceComics],
+  providers: [
+    provideBrowserGlobalErrorListeners(),
+    ServiceComics,
+    provideHttpClient(),
+  ],
   bootstrap: [App],
 })
 export class AppModule {}
