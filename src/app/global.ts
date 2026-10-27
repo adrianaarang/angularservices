@@ -1,6 +1,3 @@
 export var Global = {
-
-  urlApiPersonas: "https://servicioapipersonasmvcpgs.azurewebsites.net/api/personas"
-
+    urlApiPersonas: "https://servicioapipersonasmvcpgs.azurewebsites.net/api/personas"
 }
-

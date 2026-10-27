@@ -1,119 +1,45 @@
-<nav class="navbar navbar-expand-lg" aria-label="Navegación principal"
-  style="background-color: #005187; padding: 12px 24px; box-shadow: 0 3px 10px rgba(0, 40, 80, 0.18);">
-
-  <div class="container-fluid">
-
-    <a class="navbar-brand" href="#"
-      style="color: #feffff; font-size: 1.4rem; font-weight: 700; letter-spacing: 0.5px;">
-      Navbar
-    </a>
-
-    <button class="navbar-toggler" type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-      style="border: 1px solid #84b6f4; background-color: #4d82be;">
-
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0"
-        style="gap: 8px; align-items: center;">
-
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#"
-            style="color: #feffff; font-weight: 600; border-radius: 6px; padding: 8px 14px;">
-            Home
-          </a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link"
-            routerLink="/personas"
-            routerLinkActive="active"
-            [routerLinkActiveOptions]="{ exact: true }"
-            aria-label="Ver personas"
-            style="color: #c4dafa; font-weight: 500; border-radius: 6px; padding: 8px 14px; transition: background-color 0.2s ease, color 0.2s ease;">
-            <span aria-hidden="true"></span>
-            Personas
-          </a>
-        </li>
-          <li class="nav-item">
-          <a class="nav-link"
-            routerLink="/coches"
-            routerLinkActive="active"
-            [routerLinkActiveOptions]="{ exact: true }"
-            aria-label="Ver coches"
-            style="color: #c4dafa; font-weight: 500; border-radius: 6px; padding: 8px 14px; transition: background-color 0.2s ease, color 0.2s ease;">
-            <span aria-hidden="true"></span>
-            Coches
-          </a>
-        </li>
-              <li class="nav-item">
-          <a class="nav-link"
-            routerLink="/plantillas"
-            routerLinkActive="active"
-            [routerLinkActiveOptions]="{ exact: true }"
-            aria-label="Ver plantillas"
-            style="color: #c4dafa; font-weight: 500; border-radius: 6px; padding: 8px 14px; transition: background-color 0.2s ease, color 0.2s ease;">
-            <span aria-hidden="true"></span>
-            Plantillas
-          </a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link"
-            routerLink="/comics"
-            routerLinkActive="active"
-            aria-label="Ver comics"
-            style="color: #c4dafa; font-weight: 500; border-radius: 6px; padding: 8px 14px; transition: background-color 0.2s ease, color 0.2s ease;">
-            <span aria-hidden="true"></span>
-            Comics
-          </a>
-        </li>
-
-        <!--
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button"
-            data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
-        </li>
-        -->
-
-        <li class="nav-item">
-          <a class="nav-link disabled" aria-disabled="true"
-            style="color: #84b6f4; opacity: 0.65; padding: 8px 14px;">
-            Disabled
-          </a>
-        </li>
-
-      </ul>
-
-      <form class="d-flex" role="search" style="gap: 8px;">
-
-        <input class="form-control" type="search"
-          placeholder="Search"
-          aria-label="Search"
-          style="background-color: #feffff; color: #005187; border: 1px solid #84b6f4; border-radius: 4px; min-width: 160px;" />
-
-        <button type="submit"
-          style="background-color: #005187; color: #c4dafa; border: 1px solid #c4dafa; border-radius: 4px; padding: 8px 16px; font-size: 1rem; font-weight: 600; cursor: pointer; transition: background-color 0.2s ease, color 0.2s ease;">
-          Search
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
         </button>
-
-      </form>
-
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" 
+                [routerLink]="['/']">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/personas']">Personas</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/coches']">Coches</a>
+            </li>  
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/plantillasimple']">
+                    Plantilla simple
+                </a>
+            </li>                         
+            <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Dropdown
+            </a>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+            </li>
+        </ul>
+        <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+            <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+        </div>
     </div>
-  </div>
-</nav>
+    </nav>

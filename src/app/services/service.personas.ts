@@ -14,28 +14,23 @@ export class ServicePersonas {
     //DEVOLVER LA PETICION O DEVOLVER UNA PROMESA
     //DEVOLVEMOS LA PETICION A LA LLAMADA UTILIZANDO Observable
     getPersonas(): Observable<any> {
-        let urlApi = Global.urlApiPersonas;
+        let urlApi = environment.urlApiPersonas;
         return this._http.get(urlApi);
     }
 
-    //CON PROMESA, DEVOLVEMOS UNA PROMESA QUE SE RESUELVE CUANDO LA PETICIÓN SE COMPLETA
-    getPersonasPromise(): Promise<any>{
-        let urlApi = Global.urlApiPersonas;
-        let promise = new Promise ((resolve) =>{
-
-          //AQUI LEEMOS LA PETICIÓN EXTRAYENDO LOS DATOS A LA VEZ
+    getPersonasPromise(): Promise<any> {
+        let urlApi = "https://servicioapipersonasmvcpgs.azurewebsites.net/api/personas";        
+        let promise = new Promise((resolve) => {
+            //AQUI LEEMOS LA PETICION EXTRAYENDO LOS DATOS A LA VEZ
             this._http.get(urlApi).subscribe((response) => {
                 resolve(response);
-            });
-        })
+            })
+        })  
         return promise;
     }
-  //CON PROMESA, DEVOLVEMOS UNA PROMESA QUE SE RESUELVE CUANDO LA PETICIÓN SE COMPLETA
-    async getPersonasAsync(): Promise<Persona[]>{
-        let urlApi = environment.urlApiPersonas;
-        return firstValueFrom(this._http.get<Persona[]>(urlApi));
 
+    async getPersonasAsync(): Promise<Persona[]> {
+        let urlApi = "https://servicioapipersonasmvcpgs.azurewebsites.net/api/personas";        
+        return firstValueFrom(this._http.get<Persona[]>(urlApi)); 
     }
-
-
 }
