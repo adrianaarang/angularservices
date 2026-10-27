@@ -10,9 +10,18 @@ import { PersonasApiComponent } from './components/personas-api-component/person
 import { MenuComponent } from './components/menu-component/menu-component';
 import { ServiceCoches } from './services/service.coches';
 import { CochesApiComponent } from './components/coches-api-component/coches-api-component';
+import { Plantillafuncionsimplecomponent } from './components/plantillafuncionsimplecomponent/plantillafuncionsimplecomponent';
+import { ServicePlantillas } from './services/service.plantillas';
 
 @NgModule({
-  declarations: [App, ComicsComponent, PersonasApiComponent, MenuComponent, CochesApiComponent],
+  declarations: [
+    App,
+    ComicsComponent,
+    PersonasApiComponent,
+    MenuComponent,
+    CochesApiComponent,
+    Plantillafuncionsimplecomponent,
+  ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [
     provideHttpClient(),
@@ -20,6 +29,7 @@ import { CochesApiComponent } from './components/coches-api-component/coches-api
     ServiceComics,
     ServicePersonas,
     ServiceCoches,
+    ServicePlantillas,
   ],
   bootstrap: [App],
 })
